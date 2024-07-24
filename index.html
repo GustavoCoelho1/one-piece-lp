@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="styles.css" />
+
         <title>One Piece - O melhor</title>
     </head>
     <body>
@@ -22,7 +25,7 @@
 
             <section id="intro" class="bg-blue bg-skull">
                 <div class="intro-luffy-img">
-                    <img src="intro-luffy-img.png" alt="Luffy" />
+                    <img src="intro-luffy.png" alt="Luffy" />
                 </div>
                 <h1>Introdução à <b>história</b></h1>
                 <p class="color-default">
@@ -54,38 +57,14 @@
                         de Luffy nessa jornada!</span
                     >
 
-                    <div class="crew-carousel">
-                        <div class="crew-img">
-                            <img src="nami.png" alt="Nami" title="Nami" />
-                            <img
-                                src="nami-h.png"
-                                alt="Nami"
-                                class="crew-hilight"
-                            />
-                        </div>
-                        <div class="crew-img">
-                            <img src="zoro.png" alt="Zoro" title="Zoro" />
-                            <img
-                                src="zoro-h.png"
-                                alt="Zoro"
-                                class="crew-hilight"
-                            />
-                        </div>
-                        <div class="crew-img">
-                            <img src="sanji.png" alt="Sanji" title="Sanji" />
-                            <img
-                                src="sanji-h.png"
-                                alt="Sanji"
-                                class="crew-hilight"
-                            />
-                        </div>
-                        <div class="crew-img">
-                            <img src="usopp.png" alt="Usopp" title="Usopp" />
-                            <img
-                                src="usopp-h.png"
-                                alt="Usopp"
-                                class="crew-hilight"
-                            />
+                    <div class="slider-container">
+                        <div class="slider-outer-box">
+                            <div class="gradient-left"></div>
+                            <div class="gradient-right"></div>
+                            <div
+                                id="slider-content"
+                                class="slider-content"
+                            ></div>
                         </div>
                     </div>
                 </section>
@@ -146,7 +125,13 @@
                     essa intro <b>maravilhosa!</b>
                 </p>
 
-                <video class="end-video" src="end-video.mp4" controls></video>
+                <iframe
+                    class="end-video"
+                    src="https://drive.google.com/file/d/155Ste9a3txf-p_jHerC7AiFe6ZobJsoI/preview"
+                    width="640"
+                    height="400"
+                    allow="fullscreen"
+                ></iframe>
             </section>
         </main>
 
@@ -195,5 +180,7 @@
                 <button class="modal-ok"></button>
             </div>
         </div>
+
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
