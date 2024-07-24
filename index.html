@@ -4,27 +4,42 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS -->
         <link rel="stylesheet" href="styles.css" />
 
         <title>One Piece - O melhor</title>
     </head>
     <body>
         <header>
-            <img src="" alt="" />
-            <button class="menu-button">[svg-menu]</button>
+            <img class="header-logo" src="assets/logo.png" alt="" />
+
+            <!-- Aqui é a bolinha do menu-->
+            <div class="mobile_menu">
+                <div class="line_1"></div>
+                <div class="line_2"></div>
+                <div class="line_3"></div>
+            </div>
         </header>
 
         <main>
             <section id="hero" class="hero">
-                <div class="hero-img">
-                    <img src="hero-img.png" alt="One piece" />
+                <div class="hero-img img-container">
+                    <img src="./assets/big-logo.png" alt="One piece" />
                 </div>
                 <span>Conheça o melhor anime de aventura do século XXI</span>
                 <button class="hero-button">Vamos lá!</button>
             </section>
 
             <section id="intro" class="bg-blue bg-skull">
-                <div class="intro-luffy-img">
+                <div class="intro-luffy-img img-container">
                     <img src="intro-luffy.png" alt="Luffy" />
                 </div>
                 <h1>Introdução à <b>história</b></h1>
@@ -41,7 +56,7 @@
                     <b class="gold">Rei dos Piratas</b>.
                 </p>
 
-                <div class="intro-illustration-img">
+                <div class="intro-illustration-img img-container">
                     <img src="intro-luffy-shanks.png" alt="" />
                 </div>
 
@@ -94,10 +109,10 @@
                 <h1>Conheça o <b>criador da obra</b></h1>
 
                 <div>
-                    <div class="creator-img">
+                    <div class="creator-img img-container">
                         <img src="oda.png" alt="" />
-                        <h1><b class="gold">Eichiro Oda (Mangaka)</b></h1>
                     </div>
+                    <h1><b class="gold">Eichiro Oda (Mangaka)</b></h1>
                     <p>
                         One Piece que hoje é uma das séries de anime mais
                         populares do mundo, é criada por <b>Eiichiro Oda</b>.
@@ -141,8 +156,19 @@
             <span>por Gustavo Coelho</span>
         </footer>
 
+        <div class="modal">
+            <div class="modal-x"></div>
+            <div class="modal-img"></div>
+            <div class="modal-content">
+                <h1 class="modal-title"></h1>
+                <p class="modal-text"></p>
+                <div class="modal-gif"><img src="" alt="" /></div>
+                <button class="modal-ok"></button>
+            </div>
+        </div>
+
         <nav>
-            <ul>
+            <ul class="nav_list">
                 <li>
                     <div class="icon">[svg-icon]</div>
                     <span>Home</span>
@@ -169,17 +195,6 @@
                 </li>
             </ul>
         </nav>
-
-        <div class="modal">
-            <div class="modal-x"></div>
-            <div class="modal-img"></div>
-            <div class="modal-content">
-                <h1 class="modal-title"></h1>
-                <p class="modal-text"></p>
-                <div class="modal-gif"><img src="" alt="" /></div>
-                <button class="modal-ok"></button>
-            </div>
-        </div>
 
         <script type="text/javascript" src="script.js"></script>
     </body>
