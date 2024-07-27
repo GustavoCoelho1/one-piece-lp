@@ -8,6 +8,7 @@
 
 :root {
     --default-blue: #092b55;
+    --light-blue: #2e62a3;
     --dark-blue: #010e1f;
     --text-color: #eaf8ff;
     --hilight-blue: #61c2f7;
@@ -18,6 +19,23 @@ body {
     width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
+
+    color: var(--text-color);
+}
+
+b {
+    font-weight: normal;
+    color: var(--hilight-blue);
+}
+
+b.gold {
+    color: var(--hilight-gold);
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: normal;
 }
 
 .img-container {
@@ -32,20 +50,43 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 /* #endregion Globals*/
 
-.hero {
+/* #region Hero */
+#hero {
     min-height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     background-image: url("./assets/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        0deg,
+        var(--default-blue) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 2;
+}
+
+#hero * {
+    z-index: 3;
 }
 
 .hero-img {
@@ -54,9 +95,157 @@ body {
     height: 220px;
 }
 
+#hero span {
+    font-size: 25px;
+    text-shadow: 0 3px 0 rgb(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+.hero-button {
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    max-width: 330px;
+    padding: 0 0;
+    font-size: 48px;
+    color: var(--light-blue);
+    background-color: var(--hilight-blue);
+    box-shadow: 0px 5px 0 0 var(--light-blue);
+    font-family: "Koulen", sans-serif;
+    transition: all 0.2s ease-out;
+    animation: bright 3s infinite;
+}
+
+@keyframes bright {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.3);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.hero-button:hover {
+    filter: brightness(1.1);
+    scale: 1.05;
+}
+
+/* #endregion Hero*/
+
+/* #region Introduction */
+#intro {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--default-blue);
+    text-align: center;
+    gap: 2.5rem;
+    padding: 0 75px 100px 75px;
+}
+
+.intro-luffy-img {
+    width: 200px;
+    height: 200px;
+}
+
+#intro h1 {
+    text-align: center;
+}
+
+#intro p {
+    width: 100%;
+    max-width: 1000px;
+    font-size: 20px;
+}
+
+.intro-illustration-img {
+    width: 100%;
+    max-width: 600px;
+    height: 280px;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 10px 0 rgb(0, 0, 0, 0.25);
+}
+/* #endregion Introduction*/
+
+/* #region Crew */
+#crew {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 3rem;
+}
+
+#crew span {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* #endregion Crew */
+
+/*#region Background with skulls*/
+.bg-skull {
+    position: relative;
+}
+
+.bg-skull::before,
+.bg-skull::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 45px;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-skull::after {
+    left: 0;
+    background: url("./assets/skull-left.png");
+    background-size: contain;
+}
+
+.bg-skull::before {
+    right: 8px;
+    background: url("./assets/skull-right.png");
+    background-size: contain;
+}
+/*#endregion */
+
+/*#region Arcs*/
+#arcs {
+    padding: 3rem 5rem 0 5rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#arcs p {
+    font-size: 20px;
+}
+
+/*#endregion arcs*/
+
 .end-video {
     border-radius: 1rem;
     border: none;
+}
+
+.bg-dark-blue {
+    background-color: var(--dark-blue);
+    min-height: 100vh;
+    padding: 1rem 0;
 }
 
 /* #region Slider */
@@ -100,7 +289,7 @@ body {
         left: 0;
     }
     100% {
-        left: -150%;
+        left: -200%;
     }
 }
 
@@ -114,7 +303,7 @@ body {
 }
 
 .slider-content {
-    width: 300%;
+    width: 400%;
     animation: scroll 15s linear infinite;
     position: absolute;
     left: 0;
@@ -130,8 +319,8 @@ body {
     position: relative;
     height: 400px;
     width: 400px;
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     cursor: pointer;
 }
 
@@ -303,4 +492,29 @@ li:hover {
     border-radius: 14px;
     background-color: var(--text-color);
 }
-/**/
+/* #endregion Scrollbar*/
+
+/* #region Wavy Divider*/
+
+.wavy-divider {
+    --mask: radial-gradient(79.26px at 50% 110.25px, #000 99%, #0000 101%)
+            calc(50% - 90px) 0/180px 100%,
+        radial-gradient(79.26px at 50% -65.25px, #0000 99%, #000 101%) 50% 45px/180px
+            100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    width: 100%;
+    height: 75px;
+    background: var(--dark-blue);
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.wavy-divider.down {
+    rotate: 180deg;
+}
+
+/* #endregion Wavy Divider*/
