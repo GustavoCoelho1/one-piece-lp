@@ -17,6 +17,12 @@
             href="https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jockey+One&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- CSS -->
         <link rel="stylesheet" href="styles.css" />
@@ -25,7 +31,9 @@
     </head>
     <body>
         <header>
-            <img class="header-logo" src="assets/logo.png" alt="" />
+            <a href="#hero"
+                ><img class="header-logo" src="assets/logo.png" alt=""
+            /></a>
 
             <!-- Aqui é a bolinha do menu-->
             <div class="mobile_menu">
@@ -105,34 +113,32 @@
                         lançamento da animação.
                     </p>
 
-                    <div class="arcs-cards"></div>
+                    <div id="arcs-cards" class="arcs-cards"></div>
                 </section>
             </section>
 
             <section id="about-creator" class="bg-blue bg-skull">
-                <div class="section-transition">[svg-section-trans]</div>
+                <div class="wavy-divider down"></div>
 
                 <h1>Conheça o <b>criador da obra</b></h1>
 
-                <div>
-                    <div class="creator-img img-container">
-                        <img src="oda.png" alt="" />
-                    </div>
-                    <h1><b class="gold">Eichiro Oda (Mangaka)</b></h1>
-                    <p>
-                        One Piece que hoje é uma das séries de anime mais
-                        populares do mundo, é criada por <b>Eiichiro Oda</b>.
-                        Desde 1997, Oda impressiona com a habilidade de criar um
-                        <b>universo rico</b> e <b>emocionante</b>. Ele é
-                        realmente um mestre em criar tramas complexas e
-                        desenvolver personagens profundos, equilibrando humor e
-                        emoção de <b>maneira única</b>. A dedicação de Oda a
-                        cada detalhe do vasto mundo de One Piece torna sua obra
-                        um <b>marco no entretenimento</b>,e que atrai fãs de
-                        todas as idades. Oda
-                        <b class="gold">gênio!!!</b>
-                    </p>
+                <div class="creator-img img-container">
+                    <img src="assets/oda.png" alt="" />
                 </div>
+                <h1><b class="gold">Eichiro Oda (Mangaka)</b></h1>
+                <p>
+                    One Piece que hoje é uma das séries de anime mais populares
+                    do mundo, é criada por <b>Eiichiro Oda</b>. Desde 1997, Oda
+                    impressiona com a habilidade de criar um
+                    <b>universo rico</b> e <b>emocionante</b>. Ele é realmente
+                    um mestre em criar tramas complexas e desenvolver
+                    personagens profundos, equilibrando humor e emoção de
+                    <b>maneira única</b>. A dedicação de Oda a cada detalhe do
+                    vasto mundo de One Piece torna sua obra um
+                    <b>marco no entretenimento</b>,e que atrai fãs de todas as
+                    idades. Oda
+                    <b class="gold">gênio!!!</b>
+                </p>
             </section>
 
             <section id="end" class="bg-white">
@@ -149,28 +155,29 @@
                 <iframe
                     class="end-video"
                     src="https://drive.google.com/file/d/155Ste9a3txf-p_jHerC7AiFe6ZobJsoI/preview"
-                    width="640"
-                    height="400"
+                    width="1000"
+                    height="600"
                     allow="fullscreen"
                 ></iframe>
             </section>
         </main>
 
         <footer>
-            <span>Desenvolvido com</span>
-            <span>[svg-love]</span>
+            <span>Desenvolvido com </span>
+            <span class="icon"> <img src="./assets/icons/heart.svg" /> </span>
             <span>por Gustavo Coelho</span>
         </footer>
 
-        <div class="backdrop">
+        <div id="backdrop" class="backdrop">
             <div class="modal">
-                <div class="modal-x"></div>
-                <div class="modal-img"></div>
+                <div class="modal-img img-container"><img src="" alt="" /></div>
                 <div class="modal-content">
-                    <h1 class="modal-title"></h1>
+                    <h1 class="modal-title gold"></h1>
                     <p class="modal-text"></p>
-                    <div class="modal-gif"><img src="" alt="" /></div>
-                    <button class="modal-ok"></button>
+                    <div class="modal-gif img-container">
+                        <img src="" alt="" />
+                    </div>
+                    <button class="modal-ok">OK</button>
                 </div>
             </div>
         </div>
@@ -178,28 +185,40 @@
         <nav>
             <ul class="nav_list">
                 <li>
-                    <div class="icon">[svg-icon]</div>
-                    <span>Home</span>
+                    <div class="icon">
+                        <img src="./assets/icons/home.svg" />
+                    </div>
+                    <a href="#hero">Home</a>
                 </li>
                 <li>
-                    <div class="icon">[svg-icon]</div>
-                    <span>História</span>
+                    <div class="icon">
+                        <img src="./assets/icons/skull.svg" />
+                    </div>
+                    <a href="#intro">História</a>
                 </li>
                 <li>
-                    <div class="icon">[svg-icon]</div>
-                    <span>Tripulação</span>
+                    <div class="icon">
+                        <img src="./assets/icons/swords.svg" />
+                    </div>
+                    <a href="#crew">Tripulação</a>
                 </li>
                 <li>
-                    <div class="icon">[svg-icon]</div>
-                    <span>Arcos</span>
+                    <div class="icon">
+                        <img src="./assets/icons/book.svg" />
+                    </div>
+                    <a href="#arcs">Arcos</a>
                 </li>
                 <li>
-                    <div class="icon">[svg-icon]</div>
-                    <span>Criador da obra</span>
+                    <div class="icon">
+                        <img src="./assets/icons/light.svg" />
+                    </div>
+                    <a href="#about-creator">Criador da obra</a>
                 </li>
                 <li>
-                    <div class="icon">[svg-icon]</div>
-                    <span>Conclusão</span>
+                    <div class="icon">
+                        <img src="./assets/icons/okay.svg" />
+                    </div>
+                    <a href="#end">Conclusão</a>
                 </li>
             </ul>
         </nav>

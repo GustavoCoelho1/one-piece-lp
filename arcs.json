@@ -1,7 +1,52 @@
 [
     {
-        "id": "east_blue",
-        "title": "East blue",
-        "description": "lorem"
+        "id": "1",
+        "title": "East Blue",
+        "description": "O ponto de partida para grandes aventuras, onde um jovem pirata com um sonho grandioso começa a reunir sua tripulação peculiar e enfrenta seus primeiros desafios."
+    },
+    {
+        "id": "2",
+        "title": "Alabasta",
+        "description": "Em meio ao deserto ardente, uma nação em crise se torna o palco de uma batalha épica entre piratas e forças sombrias. O destino de um reino está em jogo."
+    },
+    {
+        "id": "3",
+        "title": "Skypiea",
+        "description": "Nas nuvens, uma terra mítica e sagrada esconde segredos antigos e um poder celestial. A tripulação encara uma jornada nas alturas cheia de mistérios e desafios divinos."
+    },
+    {
+        "id": "4",
+        "title": "Water 7/Enies Lobby",
+        "description": "Na cidade das águas, uma traição inesperada leva a tripulação a uma missão de resgate arriscada, culminando em uma batalha monumental contra um governo implacável."
+    },
+    {
+        "id": "5",
+        "title": "Thriller Bark",
+        "description": "Um navio fantasma gigantesco navega em mares sombrios, onde monstros e seres das trevas testam os limites da coragem e da determinação dos piratas."
+    },
+    {
+        "id": "6",
+        "title": "Marineford",
+        "description": "No epicentro da justiça mundial, uma guerra devastadora se desenrola, envolvendo os maiores poderes do mundo em um confronto que mudará o destino dos mares."
+    },
+    {
+        "id": "7",
+        "title": "Arquipélago Sabaody",
+        "description": "Em um arquipélago próximo à Grande Linha, a tripulação enfrenta dilemas morais e forças avassaladoras, enquanto segredos sombrios sobre o mundo começam a ser revelados."
+    },
+    {
+        "id": "8",
+        "title": "Dressrosa",
+        "description": "Em uma ilha cheia de contrastes, onde o passado e o presente colidem, um tirano manipula tudo à sua volta. Cabe aos piratas desafiar o poder absoluto e libertar a nação."
+    },
+    {
+        "id": "9",
+        "title": "Wano",
+        "description": "Em uma terra isolada com tradições ancestrais e guerreiros formidáveis, uma revolução está em curso. A tripulação se junta a aliados inesperados para derrubar um regime cruel de um dos Imperadores."
+    },
+    {
+        "id": "10",
+        "title": "Saga Final",
+        "description": "Os maiores mistérios e conflitos dos mares se aproximam de uma conclusão épica. A jornada que começou no East Blue chega ao seu clímax, onde destinos serão selados."
     }
 ]

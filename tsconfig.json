@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "esnext", // Compila o código para a versão mais recente do JavaScript
+        "module": "esnext", // Usa o sistema de módulos ES6
+        "moduleResolution": "node", // Resolve módulos da mesma maneira que o Node.js
+        "strict": false, // Habilita verificações rigorosas de tipos
+        "esModuleInterop": true, // Melhora a interoperabilidade com módulos CommonJS
+        "forceConsistentCasingInFileNames": true, // Impede diferenças de maiúsculas e minúsculas nos nomes dos arquivos
+        "skipLibCheck": true, // Ignora a verificação de tipos de arquivos de declaração (melhora o desempenho)
+        "allowSyntheticDefaultImports": true, // Permite importações padrão sintéticas
+        "resolveJsonModule": true, // Permite importar arquivos JSON como módulos
+        "lib": ["esnext", "dom"] // Inclui bibliotecas padrão para o ESNext e DOM
+    }
+}

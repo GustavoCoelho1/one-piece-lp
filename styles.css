@@ -6,6 +6,10 @@
     font-family: "Jockey One", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --default-blue: #092b55;
     --light-blue: #2e62a3;
@@ -23,12 +27,17 @@ body {
     color: var(--text-color);
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 b {
     font-weight: normal;
     color: var(--hilight-blue);
 }
 
-b.gold {
+.gold {
     color: var(--hilight-gold);
 }
 
@@ -38,20 +47,28 @@ h1 {
     font-weight: normal;
 }
 
-.img-container {
+.img-container,
+.icon {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.img-container img {
+.img-container img,
+.icon img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
 /* #endregion Globals*/
 
 /* #region Hero */
@@ -215,7 +232,7 @@ h1 {
 }
 
 .bg-skull::before {
-    right: 8px;
+    right: 0;
     background: url("./assets/skull-right.png");
     background-size: contain;
 }
@@ -235,7 +252,40 @@ h1 {
     font-size: 20px;
 }
 
-/*#endregion arcs*/
+.arc-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.arcs-cards {
+    margin: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5rem 2rem;
+}
+
+.arc-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 250px;
+    height: 350px;
+}
+
+.arc-title {
+    color: white;
+}
+
+.arc-card-container:hover {
+    scale: 1.05;
+}
+
+/*#endregion Arcs*/
 
 .end-video {
     border-radius: 1rem;
@@ -374,6 +424,14 @@ h1 {
 /* #endregion Slider */
 
 /* #region NavBar */
+header .icon {
+    color: white;
+}
+
+header a {
+    color: var(--text-color);
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -382,6 +440,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0 1rem;
+    padding-top: 0.5rem;
     align-items: center;
     background: none;
     height: 70px;
@@ -418,10 +477,10 @@ li:hover {
     align-items: start;
     justify-content: space-around;
     gap: 1rem;
+    z-index: -1;
 
     opacity: 0;
     transition: opacity 0.2s ease-in;
-    z-index: 999;
 }
 
 .nav_list li {
@@ -450,6 +509,7 @@ li:hover {
 }
 
 .nav_list.active /* "active" é uma classe que vai ser criada lá no JS, e que servirá pra saber se o usuário clicou no botao de menu*/ {
+    z-index: 999;
     opacity: 1;
 }
 
@@ -515,6 +575,9 @@ li:hover {
 
 .wavy-divider.down {
     rotate: 180deg;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 /* #endregion Wavy Divider*/
@@ -529,23 +592,29 @@ li:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur("10px");
+    backdrop-filter: blur(10px);
     display: none;
     opacity: 0;
 
     padding-top: 2rem;
-    display: flex;
+    display: none;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+
+    opacity: 0;
+    z-index: 99;
 
     transition: 0.3s ease-in;
 }
 
 .modal {
+    width: 80%;
+    max-width: 1000px;
     background-color: var(--dark-blue);
     border-radius: 1rem;
     display: flex;
     position: relative;
+    overflow: hidden;
 }
 
 .modal-x {
@@ -555,16 +624,140 @@ li:hover {
 }
 
 .modal-img {
-    width: 40%;
-    height: 100%;
-    background-image: black;
-    background-size: cover;
-    background-position: center;
+    min-width: 350px;
+    height: 550px;
+}
+
+.modal-img img {
+    object-fit: cover;
+    object-position: center;
 }
 
 .modal-content {
-    width: 60%;
-    height: 100%;
-    margin-top: 2rem;
+    width: 100%;
+    min-height: 550px;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.modal-text {
+    font-size: 18px;
+}
+
+.modal-gif {
+    width: 200px;
+    height: 200px;
+    display: none;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.modal-gif.active {
+    display: flex;
+}
+
+.modal-ok {
+    align-self: flex-end;
+    padding: 5px 30px;
+    border: solid 1px var(--hilight-blue);
+    color: var(--hilight-blue);
+    background: none;
+    border-radius: 10px;
+    font-family: "Koulen", sans-serif;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.modal-ok:hover {
+    background: var(--hilight-blue);
+    color: white;
+}
+
+/*#endregion*/
+
+/*#region Creator*/
+#about-creator {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--default-blue);
+    text-align: center;
+    gap: 2.5rem;
+    padding: 100px 75px 0 75px;
+}
+
+#about-creator p {
+    font-size: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.creator-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 10px 10px 0 rgb(0, 0, 0, 0.25);
+}
+
+.creator-img img {
+    box-shadow: none;
+    object-fit: cover;
+    object-position: -60px;
+    width: 400px;
+    height: 400px;
+}
+
+/*#endregion*/
+
+/*#region End*/
+#end {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 80px 75px 100px 75px;
+}
+
+#end p.reverse,
+#end h1.reverse {
+    color: var(--dark-blue);
+}
+
+#end p {
+    font-size: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/*#endregion*/
+
+/*#region Footer*/
+footer {
+    width: 100%;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--dark-blue);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 1rem;
+}
+
+footer .icon {
+    color: var(--hilight-blue);
 }
